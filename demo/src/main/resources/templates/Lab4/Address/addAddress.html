@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="add-Address" method="post" th:object="${address}">
+    <label>Address </label>
+    <input th:field="*{address}"/>
+    <br>
+    <label>Address 2 </label>
+    <input th:field="*{address2}"/>
+    <br>
+    <label>District </label>
+    <input th:field="*{district}"/>
+    <br>
+    <label>City Id</label>
+    <select th:field="*{cityId}">
+        <option value=""> --</option>
+        <option th:each="city : ${listCity}"
+                th:value="${city.getCityId()}"
+                th:text="${city.getCity()}"/>
+    </select>
+    <br>
+    <label>Postal Code </label>
+    <input th:field="*{postalCode}"/>
+    <br>
+    <label>Phone </label>
+    <input th:field="*{phone}"/>
+    <br>
+    <label>Last Update</label>
+    <input type="date" th:field="*{lastUpdate}"/>
+    <br>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="list-actor" method="get">
+  <input name="tukhoa" type="text">
+  <button type="submit">Submit</button>
+</form>
+<table>
+  <tr>
+    <th>Actor Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Last Update</th>
+  </tr>
+  <tr th:each="actor: ${listac}">
+    <td th:text="${actor.getActorId()}"></td>
+    <td th:text="${actor.getFirstName()}"></td>
+    <td th:text="${actor.getLastName()}"></td>
+    <td th:text="${actor.getLastUpdate()}"></td>
+  </tr>
+</table>
+</body>
+</html>

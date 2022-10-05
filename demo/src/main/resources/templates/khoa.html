@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table, tr,th,td {
+        border: 1px solid;
+    }
+</style>
+<body>
+<h1>Tbl Khoa</h1>
+<table>
+    <tr>
+        <th>Ma khoa</th>
+        <th>Ten khoa</th>
+        <th>Dien thoai</th>
+    </tr>
+    <tr th:each="khoa: ${listKhoa}">
+        <td th:text="${khoa.getMaKhoa()}"></td>
+        <td th:text="${khoa.getTenkhoa()}"></td>
+        <td th:text="${khoa.getDienthoai()}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="add-filmActor" method="post" th:object="${filmActor}">
+    <label>Actor Id</label>
+    <select th:field="*{actorId}">
+        <option value=""> --</option>
+        <option th:each="actor : ${ListActor}"
+                th:value="${actor.getActorId()}"
+                th:text="${actor.getFirstName()}"/>
+    </select>
+    <br>
+    <label>Film Id</label>
+    <select th:field="*{filmId}">
+        <option value=""> --</option>
+        <option th:each="film : ${listFilm}"
+                th:value="${film.getFilmId()}"
+                th:text="${film.getTitle()}"/>
+    </select>
+    <br>
+    <label>Last Update</label>
+    <input type="date" th:field="*{lastUpdate}"/>
+    <br>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>

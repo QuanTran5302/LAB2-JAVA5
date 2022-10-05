@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  table, tr,th,td {
+    border: 1px solid;
+  }
+</style>
+<body>
+<h1>Tbl Sinh Vien</h1>
+<table>
+  <tr>
+    <th>Ma Sinh Vien</th>
+    <th>Ten Sinh Vien </th>
+    <th>Ma Khoa</th>
+    <th>Nam Sinh</th>
+    <th>Que Quan</th>
+  </tr>
+  <tr th:each="sinhVien: ${listSinhVien}">
+    <td th:text="${sinhVien.getMaSv()}"></td>
+    <td th:text="${sinhVien.getHoTenSv()}"></td>
+    <td th:text="${sinhVien.getMakhoa()}"></td>
+    <td th:text="${sinhVien.getNamsinh()}"></td>
+    <td th:text="${sinhVien.getQueQuan()}"></td>
+  </tr>
+</table>
+</body>
+</html>

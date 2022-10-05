@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="add-Country" method="post" th:object="${country}">
+    <label>Country Name</label>
+    <input th:field="*{countrys}"/>
+    <br>
+    <label>Last Update</label>
+    <input type="date" th:field="*{lastUpdate}"/>
+    <br>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>

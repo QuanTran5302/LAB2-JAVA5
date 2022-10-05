@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="list-Film" method="get">
+    <input name="tukhoa" type="text">
+    <button type="submit">Submit</button>
+</form>
+<table>
+    <tr>
+        <th>Film Id</th>
+        <th>Title</th>
+        <th>description</th>
+        <th> releaseYear</th>
+        <th> languageId</th>
+        <th>originalLanguageId</th>
+        <th> rentalDuration</th>
+        <th> rentalRate</th>
+        <th> length</th>
+        <th> replacemntCost</th>
+        <th> rating</th>
+        <th> specialFeatures</th>
+        <th> lastUpdate</th>
+    </tr>
+    <tr th:each="film: ${listFilm}">
+        <td th:text="${film.getFilmId()}"></td>
+        <td th:text="${film.getTitle()}"></td>
+        <td th:text="${film.getDescription()}"></td>
+        <td th:text="${film.getReleaseYear()}"></td>
+        <td th:text="${film.getLanguageId()}"></td>
+        <td th:text="${film.getOriginalLanguageId()}"></td>
+        <td th:text="${film.getRentalDuration()}"></td>
+        <td th:text="${film.getRentalRate()}"></td>
+        <td th:text="${film.getLength()}"></td>
+        <td th:text="${film.getReplacementCost()}"></td>
+        <td th:text="${film.getRating()}"></td>
+        <td th:text="${film.getSpecialFeatures()}"></td>
+        <td th:text="${film.getLastUpdate()}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="list-address" method="get">
+  <input name="tukhoa" type="text">
+  <button type="submit">Submit</button>
+</form>
+<table>
+  <tr>
+    <th>Address Id</th>
+    <th>Address</th>
+    <th>Address2</th>
+    <th>District</th>
+    <th>City </th>
+    <th>Postal Code</th>
+    <th>Phone</th>
+    <th>Last Update</th>
+  </tr>
+  <tr th:each="address: ${listAddress}">
+    <td th:text="${address.getAddressId()}"></td>
+    <td th:text="${address.getAddress()}"></td>
+    <td th:text="${address.getAddress2()}"></td>
+    <td th:text="${address.getDistrict()}"></td>
+    <td th:text="${address.getCityId()}"></td>
+    <td th:text="${address.getPostalCode()}"></td>
+    <td th:text="${address.getPhone()}"></td>
+    <td th:text="${address.getLastUpdate()}"></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="list_cate" method="get">
+    <input name="tukhoa" type="text">
+    <button type="submit">Submit</button>
+</form>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>DATE</th>
+    </tr>
+    <tr th:each="cate: ${listcate}">
+        <td th:text="${cate.getCategoryId()}"></td>
+        <td th:text="${cate.getName()}"></td>
+        <td th:text="${cate.getLastUpdate()}"></td>
+    </tr>
+
+</table>
+</body>
+</html>

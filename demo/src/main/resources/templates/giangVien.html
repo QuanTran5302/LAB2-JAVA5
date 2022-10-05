@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  table, tr,th,td {
+    border: 1px solid;
+  }
+</style>
+<body>
+<h1>Tbl Giang Vien</h1>
+<table>
+  <tr>
+    <th>Ma Giang Vien</th>
+    <th>Ten Giang Vien</th>
+    <th>Luong</th>
+    <th>Ma Khoa</th>
+  </tr>
+  <tr th:each="giangVien: ${listGV}">
+    <td th:text="${giangVien.getMaGV()}"></td>
+    <td th:text="${giangVien.getHoTenGV()}"></td>
+    <td th:text="${giangVien.getLuong()}"></td>
+    <td th:text="${giangVien.getMaKhoa()}"></td>
+  </tr>
+</table>
+</body>
+</html>

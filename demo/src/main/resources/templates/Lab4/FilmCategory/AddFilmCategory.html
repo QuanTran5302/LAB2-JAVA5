@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="add-filmCategory" method="post" th:object="${filmCategory}">
+    <label>Film Id</label>
+    <select th:field="*{filmId}">
+        <option value=""> --</option>
+        <option th:each="film : ${listFilm}"
+                th:value="${film.getFilmId()}"
+                th:text="${film.getTitle()}"/>
+    </select>
+    <br>
+    <label>Catgory Id</label>
+    <select th:field="*{categoryId}">
+        <option value=""> --</option>
+        <option th:each="cate : ${listCategory}"
+                th:value="${cate.getCategoryId()}"
+                th:text="${cate.getName()}"/>
+    </select>
+    <br>
+    <label>Last Update</label>
+    <input type="date" th:field="*{lastUpdate}"/>
+    <br>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>
